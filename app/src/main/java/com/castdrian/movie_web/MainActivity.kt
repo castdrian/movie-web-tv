@@ -6,10 +6,6 @@ import android.webkit.WebSettings
 import android.webkit.WebView
 import androidx.fragment.app.FragmentActivity
 
-
-/**
- * Loads [MainFragment].
- */
 class MainActivity : FragmentActivity() {
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -17,13 +13,12 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val mainWebView = WebView(this.applicationContext)
-        val webSettings: WebSettings = mainWebView.getSettings()
+        val mainWebView = findViewById<WebView>(R.id.webView)
+        val webSettings: WebSettings = mainWebView.settings
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
         webSettings.databaseEnabled = true
 
-        setContentView(mainWebView)
         mainWebView.loadUrl("https://movie-web.app")
     }
 }

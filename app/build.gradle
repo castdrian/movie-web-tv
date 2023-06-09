@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace 'com.castdrian.movie_web'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.castdrian.movie_web"
@@ -22,6 +22,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
 }
 
 dependencies {
@@ -29,4 +37,5 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.leanback:leanback:1.0.0'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
+    implementation 'androidx.core:core-ktx:+'
 }
